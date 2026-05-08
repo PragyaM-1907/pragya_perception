@@ -1,0 +1,20 @@
+<launch>
+  <!-- Pragya's Custom Object Detection Launch File -->
+  <!-- Modification: Using ORB detector instead of default SURF -->
+  <!-- ORB is faster and works better on low-resource systems -->
+ 
+  <node name="find_object_2d" pkg="find_object_2d"
+        type="find_object_2d" output="screen">
+   
+    <!-- MODIFICATION 1: Changed detector to ORB (faster than default SURF) -->
+    <param name="detector" value="ORB"/>
+   
+    <!-- MODIFICATION 2: Custom sensitivity threshold -->
+    <param name="homography_min_inliers" value="8"/>
+   
+    <!-- MODIFICATION 3: Increased objects detected per frame -->
+    <param name="max_objects" value="5"/>
+   
+  </node>
+</launch>
+
